@@ -1,0 +1,62 @@
+        <ul>
+            <li>Home</li>
+            <li>Cross Country</li>
+            <li>Track</li>
+            <li>About</li>        
+        </ul>
+        
+        <ul class="subNav">
+            <li>2016</li>
+            <li> 2017</li>
+        </ul>
+        
+        
+        -----
+        
+        nav ul li {
+    text-align: center;
+    font-weight: 200;
+    list-style: none;
+    font-size: 1.5em;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.subNav {
+    width: 15%;
+    background-color: #c80f28;
+    color: #f0f0f0;
+    float: left;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: 200;
+    list-style: none;
+    font-size: 1.5em;
+}
+
+.subNav ul li {
+    border-bottom: 2px solid #f0f0f0;
+}
+
+
+----
+
+
+$('.navTrack').hover(
+    function() {
+        $('.navTable').css('width', '200%');
+        $('.Track_18').fadeIn(500);
+        $('.S_17').fadeIn(500);
+        //When hovering over Track, show 2018 & 2017 tabs
+    },
+    function() {
+        //When no longer hovering over Track, check to see if 2018 or 2017 tabs are hovered
+        $('.S_17, .Track_18').mouseleave(function() {
+            setTimeout(function() {
+                $('.Track_18').fadeOut(500);
+                $('.S_17').fadeOut(500, function() {
+                    $('.navTable').css('width', '100%');
+                });
+            },500);
+        }); 
+    });
